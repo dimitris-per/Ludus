@@ -1,0 +1,45 @@
+
+html, body {
+    height: 100%;
+    margin: 0;
+    background-color: #1E2732;
+    /* background-image: url(); */
+  }
+  
+  body {
+    display: flex;
+    flex-wrap: nowrap;
+  
+    /* This centers our sketch horizontally. */
+    justify-content: center;
+  
+    /* This centers our sketch vertically. */
+    align-items: center;
+  }
+    
+  canvas {
+    border-radius: 20px;
+    border: 2px solid white;
+  }
+
+  footer {
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+  }
+  
+  footer p {
+    border: none;
+    color: rgb(102, 252, 241);
+  }
+  
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  
+  
+  
+    
+    
+  
