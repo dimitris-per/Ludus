@@ -5,10 +5,11 @@ function Ball() {
 
 	this.diameter = 32;
 
-	this.xspeed = 7; 
-	this.yspeed = 6;
+	this.xspeed = 8; 
+	this.yspeed = 7;
 
 	this.show = function() {
+
 		fill(255, 255, 255);
 		ellipse(this.x, this.y, this.diameter, this.diameter);
 	}
@@ -23,26 +24,26 @@ function Ball() {
 
 		// player1 score 
 		if (this.x >= width - 16) {
-			this.xspeed = 5; 
-			this.yspeed = 6 * random([-1, 1]);
+			this.xspeed = 6; 
+			this.yspeed = 7 * random([-1, 1]);
 			player1.resetPlayer();
 			player2.resetPlayer();	
 			leftScore += 1;
 			this.x = width/2;
 			this.y = height/2;
-			this.xspeed *= -1;
+			this.xspeed *= 2;
 		}
 
 		// player2 score
 		if (this.x <= 16) {
-			this.xspeed = 5; 
-			this.yspeed = 6 * random([-1, 1]);
+			this.xspeed = 6; 
+			this.yspeed = 7 * random([-1, 1]);
 			player1.resetPlayer();
 			player2.resetPlayer();		
 			rightScore += 1;
 			this.x = width/2;
 			this.y = height/2;
-			this.xspeed *= 1;
+			this.xspeed *= 2;
 		}
 
 		if (this.y >= height - 16  || this.y <= 16) {
@@ -70,6 +71,7 @@ function Ball() {
 
     this.show = function() {
         // Draw the tail
+		 noStroke();
         for (var i = 0; i < this.tailPositions.length; i++) {
             var alpha = map(i, 0, this.tailPositions.length, 100, 0); //100-0 = opacity range
             fill(255, 255, 255, alpha);
@@ -103,4 +105,5 @@ function Ball() {
         this.xspeed = 0;
         this.yspeed = 0;
     }
-}}
+}
+}

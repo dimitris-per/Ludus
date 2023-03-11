@@ -26,7 +26,21 @@ function setup() {
 }
 
 function draw() {
-	background(31, 40, 51);
+	// background(31, 80, 51);
+	let c1 = color(31, 40, 51);
+	let c2 = color(0, 204, 204);
+	
+	// Create the gradient using the lerpColor() function
+	for (let y = 0; y < height; y++) {
+	  let inter = map(y, 0, height/2, 0, 1);
+	  if (y > height/2) {
+		inter = map(y, height/2, height, 1, 0);
+	  }
+	  let c = lerpColor(c1, c2, inter);
+	  stroke(c);
+	  line(0, y, width, y);
+	}
+	
 
 	table1.show();
 	table2.show();
@@ -45,8 +59,8 @@ function draw() {
 	textAlign(CENTER);
 	// text(leftScore, width / 2 - 60, 40);
 	// text(rightScore, width / 2 + 60, 40);
-	text(leftScore, 55, 40);
-	text(rightScore, width - 55, 40);
+	text(leftScore, 50, 40);
+	text(rightScore, width - 50, 40);
 
 
 	if (flag == true) {
@@ -59,7 +73,7 @@ function draw() {
 		textSize(16);
 		fill(40, 184, 184);
 		textAlign(CENTER);
-		text("Press 'esc' to start!", width/2, 50); 
+		text("	Press 'esc' to start!", width/2, 50); 
 	}
 	
 }
@@ -94,4 +108,3 @@ function keyPressed() {
         }
     }
 }
-

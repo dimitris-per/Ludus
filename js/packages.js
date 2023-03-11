@@ -19,7 +19,4 @@ function Packages(x , y){
 		text("F" , this.x + this.width/3.5 ,  this.y + this.height/1.3);
 	}
 
-
-
-
 }

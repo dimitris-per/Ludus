@@ -10,7 +10,8 @@ function Players(x , y){
 
 
 	this.show = function(){
-		
+		stroke(0);
+		strokeWeight(2);
 		fill(102, 252, 241);
 		rect(this.x , this.y, this.playerWidth , this.ylength , 4);
 	}
@@ -66,10 +67,7 @@ function Players(x , y){
 
 			this.y = mouseY - this.ylength/2;
 
-
-
 		}
-		
 	}
 
 	this.resetPlayer = function() {
