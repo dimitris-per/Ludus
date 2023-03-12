@@ -23,6 +23,8 @@ function setup() {
 	player2 = new Players(width - 44 , height/2 - 45);
 
 	ball = new Ball();
+
+	overlay = document.getElementById("overlay");
 }
 
 function draw() {
@@ -64,13 +66,14 @@ function draw() {
 
 
 	if (flag == true) {
-		textSize(32);
+		textSize(26);
 		fill(40, 184, 184);
-		text("Paused", width/2 - 70, height/2 - 50);
+		textAlign(CENTER);
+		text("Paused", width/2, 50); 
 	}
 
 	if (escape_pressed == true) {
-		textSize(16);
+		textSize(26);
 		fill(40, 184, 184);
 		textAlign(CENTER);
 		text("	Press 'esc' to start!", width/2, 50); 
@@ -99,6 +102,7 @@ function keyPressed() {
             ball.totalReset();
             player1.resetPlayer();
             player2.resetPlayer();
+			overlay.style.display = "none";
         }
         else {
 			escape_pressed = false;

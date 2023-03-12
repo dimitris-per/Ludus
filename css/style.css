@@ -25,7 +25,33 @@ html, body {
     /* This centers our sketch vertically. */
     align-items: center;
   }
+  
+  #overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    pointer-events: none;
+
+ }
+ 
+ .message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: #fff;
+    font-size: 24px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
     
+ }
+ 
   canvas {
     border-radius: 20px;
     border: 2px solid white;
@@ -38,7 +64,6 @@ html, body {
   }
   
   
-
   footer {
     position: fixed;
     bottom: 0;
@@ -51,6 +76,67 @@ html, body {
   }
   
   a {
-    color: inherit;
+    color: inherit; /* disable link color */
     text-decoration: none;
   }
+
+  /* buttons */
+
+#button-container {
+  filter: none !important;
+	position: absolute;
+	top: 20px;
+	right: 20px;
+  font-family: 'Fira Code', monospace;  
+}
+
+#button-container button {
+  position: relative;
+  margin-bottom: 10px;
+  display: block;
+  letter-spacing: 2px;
+  text-decoration: none;
+  overflow: hidden;
+  transition: 0.2s;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  border: none;
+  color: #fff;
+  width: 100%;
+  padding: 10px;
+  font-size: 10px;
+}
+
+#button-container button:hover {
+  color: #1E2732;
+  background: #ffffff;
+  box-shadow: 0 0 20px #ffffff;
+}
+
+/*  SEPERATE BUTTON HOVERS
+
+#btn1:hover {
+  color: #1E2732;
+  background: #ffffff;
+  box-shadow: 0 0 20px #ffffff;
+}
+
+#btn2:hover {
+  background: #2196f3;
+  box-shadow: 0 0 20px #2196f3;
+}
+
+#btn3:hover {
+  background: #2196f3;
+  box-shadow: 0 0 20px #00FF66;
+}
+
+#btn4:hover {
+  background: #2196f3;
+  box-shadow: 0 0 20px #5900ff;
+}
+
+#btn5:hover {
+  background: #2196f3;
+  box-shadow: 0 0 20px #5900ff;
+} */
