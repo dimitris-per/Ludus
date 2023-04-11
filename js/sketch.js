@@ -95,20 +95,20 @@ function keyTyped() {
 }
 
 function keyPressed() {
-	// if escape is pressed. Reset everything. Don't let them move!
+	// ESC = reset
     if (keyIsDown(ESCAPE) && flag == false) {                   
         if (escape_pressed == false) {
-            escape_pressed = true;
-            ball.totalReset();
-            player1.resetPlayer();
-            player2.resetPlayer();
-			overlay.style.display = "none";
+		escape_pressed = true;
+		ball.totalReset();
+		player1.resetPlayer();
+		player2.resetPlayer();
+		overlay.style.display = "none";
         }
         else {
-			escape_pressed = false;
+		escape_pressed = false;
 			
-			// by creating new object of ball, it undos all the prohibitions of movement by setting new speed to ball.
-            ball = new Ball();                    
+		// new ball resets movements and speed
+		ball = new Ball();                    
         }
     }
 }
